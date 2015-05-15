@@ -7,7 +7,7 @@ Gem::Specification.new do |gem|
   gem.platform      = Gem::Platform::RUBY
   gem.authors       = ["shadowbq"]
   gem.email         = ["shadowbq@gmail.com"]
-  gem.description   = %q{bundle create barnyard2waldo}
+  gem.description   = %q{Describe the waldo bookmark for barnyard2}
   gem.summary       = gem.description
   gem.homepage      = "https://github.com/shadowbq/barnyard2waldo"
 
