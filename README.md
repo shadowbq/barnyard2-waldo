@@ -30,12 +30,15 @@ Record Idx: 119879
 ## Extended Help
 
 ```shell
-$> waldo -h
+$ waldo -h
 Usage: waldo [OPTIONS]
     -b                               Bookmark file
                                        Default: /var/spool/barnyard.waldo
+    -z                               Print Zulu time (utc)
+                                       Default: false
 Options::
     -h, --help                       Display this screen
+
 ```
 
 ## Reference:
