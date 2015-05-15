@@ -20,8 +20,7 @@ Gem::Specification.new do |gem|
   gem.license       = 'MIT'
 
   gem.add_development_dependency('bump', '~> 0.3')
-  gem.add_development_dependency('minitest-colorize', '~> 0.0')
-  gem.add_development_dependency('turn', '~> 0.9')
+  gem.add_development_dependency('minitest')
   gem.add_development_dependency('ansi', '~> 1.5')
   gem.add_development_dependency('simplecov', '0.9.2')
 end
