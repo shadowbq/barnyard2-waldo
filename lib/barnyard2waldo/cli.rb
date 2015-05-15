@@ -44,7 +44,7 @@ module Barnyard2
           exit
         end
 
-        finder = Barnyard2::Waldo::Where.new
+        finder = Barnyard2::Waldo::Where.new(options[:bookmark])
         puts finder
 
       end
