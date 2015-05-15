@@ -7,16 +7,16 @@ module Barnyard2
 
       def initialize (bookmark=Barnyard2::Waldo::Defaults::Bookmark)
         fp = open(bookmark, 'rb')
-        s = fp.read(MAX_FILEPATH_BUF)
+        s = fp.read(Barnyard2::Waldo::MAX_FILEPATH_BUF)
         @spool_dir = s.strip
 
-        s = fp.read(MAX_FILEPATH_BUF)
+        s = fp.read(Barnyard2::Waldo::MAX_FILEPATH_BUF)
         @spool_filebase = s.strip
 
-        s = fp.read(UINT32_t)
+        s = fp.read(Barnyard2::Waldo::UINT32_t)
         @epoch = s.unpack('V').first
 
-        s = fp.read(UINT32_t)
+        s = fp.read(Barnyard2::Waldo::UINT32_t)
         @record = s.unpack('V').first
       ensure
         fp.close

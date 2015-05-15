@@ -4,10 +4,10 @@ require 'rubygems'
 # Rubygems
 require 'blankblank'
 
-module Easy
-  module Bin
+module Barnyard2
+  module Waldo
     $:.unshift(File.dirname(__FILE__))
-    
+
     MAX_FILEPATH_BUF = 1024
     UINT32_t = 4
 
