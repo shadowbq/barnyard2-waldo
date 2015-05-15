@@ -15,8 +15,7 @@ module Barnyard2
         options[:bookmark] = Barnyard2::Waldo::Defaults::Bookmark
 
         opt_parser = OptionParser.new do |opt|
-          opt.banner = "Usage: gonna [OPTIONS] \"search string\""
-          opt.separator ""
+          opt.banner = "Usage: waldo [OPTIONS]"
 
           opt.on("-b","Bookmark file","  Default: #{options[:bookmark]}") do |value|
             options[:bookmark] = value
