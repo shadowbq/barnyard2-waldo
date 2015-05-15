@@ -4,6 +4,7 @@ module Barnyard2
     class Where
 
       attr_reader :spool_dir, :spool_filebase, :epoch, :record
+      attr_accessor :utc
 
       def initialize (bookmark=Barnyard2::Waldo::Defaults::Bookmark)
         fp = open(bookmark, 'rb')
@@ -24,7 +25,11 @@ module Barnyard2
 
       # Unpack the bytes and the array:
       def to_s
-        "Barnyard spool: #{@spool_dir}/#{@spool_filebase}.#{@epoch}\nRecord Idx: #{@record}\n#{Time.at(@epoch)}"
+        if @utc
+            "Barnyard spool: #{@spool_dir}/#{@spool_filebase}.#{@epoch}\nRecord Idx: #{@record}\n#{Time.at(@epoch).utc}"
+        else
+            "Barnyard spool: #{@spool_dir}/#{@spool_filebase}.#{@epoch}\nRecord Idx: #{@record}\n#{Time.at(@epoch)}"
+        end
       end
 
     end

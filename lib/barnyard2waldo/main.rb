@@ -5,6 +5,7 @@ module Barnyard2
 
     module Defaults
         Bookmark = '/var/spool/barnyard.waldo'
+        UTC = 'false'
     end
 
   end

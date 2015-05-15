@@ -23,7 +23,8 @@ describe Barnyard2::Waldo::Where do
 
   describe "when asking to print" do
     it "it should print the string" do
-      @where.to_s.must_equal "Barnyard spool: /var/log/snort/merged.log.1426175522\nRecord Idx: 119879\n2015-03-12 11:52:02 -0400"
+      @where.utc = true
+      @where.to_s.must_equal "Barnyard spool: /var/log/snort/merged.log.1426175522\nRecord Idx: 119879\n2015-03-12 15:52:02 UTC"
     end
   end
 end

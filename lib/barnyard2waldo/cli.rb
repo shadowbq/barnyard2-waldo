@@ -12,12 +12,17 @@ module Barnyard2
 
       def initialize
         options = {}
+        options[:utc] = Barnyard2::Waldo::Defaults::UTC
         options[:bookmark] = Barnyard2::Waldo::Defaults::Bookmark
 
         opt_parser = OptionParser.new do |opt|
           opt.banner = "Usage: waldo [OPTIONS]"
 
           opt.on("-b","Bookmark file","  Default: #{options[:bookmark]}") do |value|
+            options[:bookmark] = value
+          end
+
+          opt.on("-z","Print Zulu time (utc)","  Default: #{options[:utc]}") do |value|
             options[:bookmark] = value
           end
 
@@ -45,6 +50,7 @@ module Barnyard2
         end
 
         finder = Barnyard2::Waldo::Where.new(options[:bookmark])
+        finder.utc = options[:utc]
         puts finder
 
       end
