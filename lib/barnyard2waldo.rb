@@ -1,9 +1,6 @@
 #STDLIBS
 require 'rubygems'
 
-# Rubygems
-require 'blankblank'
-
 module Barnyard2
   module Waldo
     $:.unshift(File.dirname(__FILE__))
