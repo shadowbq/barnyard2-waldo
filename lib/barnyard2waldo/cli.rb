@@ -23,7 +23,7 @@ module Barnyard2
           end
 
           opt.on("-z","Print Zulu time (utc)","  Default: #{options[:utc]}") do |value|
-            options[:bookmark] = value
+            options[:utc] = value
           end
 
           opt.separator "Options::"

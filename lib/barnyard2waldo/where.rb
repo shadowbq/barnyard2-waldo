@@ -25,7 +25,7 @@ module Barnyard2
 
       # Unpack the bytes and the array:
       def to_s
-        if @utc
+        if @utc == true
             "Barnyard spool: #{@spool_dir}/#{@spool_filebase}.#{@epoch}\nRecord Idx: #{@record}\n#{Time.at(@epoch).utc}"
         else
             "Barnyard spool: #{@spool_dir}/#{@spool_filebase}.#{@epoch}\nRecord Idx: #{@record}\n#{Time.at(@epoch)}"
