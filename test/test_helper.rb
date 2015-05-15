@@ -13,5 +13,9 @@ require 'minitest/autorun'
 require 'minitest/spec'
 require 'minitest/pride'
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
+
 require File.join(File.dirname(__FILE__), '..', 'lib', 'barnyard2waldo', 'cli')
 require File.join(File.dirname(__FILE__), '..', 'lib', 'barnyard2waldo')
