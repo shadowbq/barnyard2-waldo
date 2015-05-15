@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["shadowbq@gmail.com"]
   gem.description   = %q{Describe the waldo bookmark for barnyard2}
   gem.summary       = gem.description
-  gem.homepage      = "https://github.com/shadowbq/barnyard2waldo"
+  gem.homepage      = "https://github.com/shadowbq/barnyard2-waldo"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
