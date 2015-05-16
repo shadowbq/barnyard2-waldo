@@ -32,9 +32,9 @@ Record Idx: 119879
 ```shell
 $ waldo -h
 Usage: waldo [OPTIONS]
-    -b                               Bookmark file
+    -b, --bookmark [waldofile]       Bookmark file
                                        Default: /var/spool/barnyard.waldo
-    -z                               Print Zulu time (utc)
+    -z, --zulu                       Print Zulu time (utc)
                                        Default: false
 Options::
     -h, --help                       Display this screen
