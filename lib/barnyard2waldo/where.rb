@@ -7,20 +7,27 @@ module Barnyard2
       attr_accessor :utc
 
       def initialize (bookmark=Barnyard2::Waldo::Defaults::Bookmark)
-        fp = open(bookmark, 'rb')
-        s = fp.read(Barnyard2::Waldo::MAX_FILEPATH_BUF)
-        @spool_dir = s.strip
+        raise WaldoFileError unless File.file?(bookmark)
+        raise WaldoFilePermissionsError unless File.stat(bookmark).readable?
+        begin
+            # (r) Read-only, starts at beginning of file  (default mode).
+            # (b) Binary file mode
+            fp = open(bookmark, 'rb')
+            s = fp.read(Barnyard2::Waldo::MAX_FILEPATH_BUF)
+            @spool_dir = s.strip
 
-        s = fp.read(Barnyard2::Waldo::MAX_FILEPATH_BUF)
-        @spool_filebase = s.strip
+            s = fp.read(Barnyard2::Waldo::MAX_FILEPATH_BUF)
+            @spool_filebase = s.strip
 
-        s = fp.read(Barnyard2::Waldo::UINT32_t)
-        @epoch = s.unpack('V').first
+            s = fp.read(Barnyard2::Waldo::UINT32_t)
+            @epoch = s.unpack('V').first
 
-        s = fp.read(Barnyard2::Waldo::UINT32_t)
-        @record = s.unpack('V').first
-      ensure
-        fp.close
+            s = fp.read(Barnyard2::Waldo::UINT32_t)
+            @record = s.unpack('V').first
+        ensure
+            fp.close
+        end
+
       end
 
       # Unpack the bytes and the array:

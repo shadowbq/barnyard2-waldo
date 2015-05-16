@@ -49,10 +49,15 @@ module Barnyard2
           exit
         end
 
-        finder = Barnyard2::Waldo::Where.new(options[:bookmark])
-        finder.utc = options[:utc]
-        puts finder
-
+        begin
+            finder = Barnyard2::Waldo::Where.new(options[:bookmark])
+            finder.utc = options[:utc]
+            puts finder
+        rescue Barnyard2::Waldo::WaldoFilePermissionsError
+            abort "Waldo File Read Perrmission Error, check permissions on the bookmark file."
+        rescue Barnyard2::Waldo::WaldoFileError
+            abort "Waldo File Error, file may not exist."
+        end
       end
 
     end #Class
