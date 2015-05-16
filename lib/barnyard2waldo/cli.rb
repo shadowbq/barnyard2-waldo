@@ -18,17 +18,17 @@ module Barnyard2
         opt_parser = OptionParser.new do |opt|
           opt.banner = "Usage: waldo [OPTIONS]"
 
-          opt.on("-b","Bookmark file","  Default: #{options[:bookmark]}") do |value|
+          opt.on("-b", "--bookmark [waldofile]", "Bookmark file", "  Default: #{options[:bookmark]}") do |value|
             options[:bookmark] = value
           end
 
-          opt.on("-z","Print Zulu time (utc)","  Default: #{options[:utc]}") do |value|
+          opt.on("-z", "--zulu", "Print Zulu time (utc)", "  Default: #{options[:utc]}") do |value|
             options[:utc] = value
           end
 
           opt.separator "Options::"
 
-          opt.on_tail("-h","--help","Display this screen") do
+          opt.on_tail("-h", "--help", "Display this screen") do
             puts opt_parser
             exit 0
           end
